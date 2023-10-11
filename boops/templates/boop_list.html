@@ -1,11 +1,12 @@
 {% for boop in boops %}
-    {{ boop.fuzzy_one }} 
-    <form method="post" action="{% url 'move_up' boop.id %}">
+    {{ boop.fuzzy_one }} {{ boop.order }} 
+    <form method="post" action="{% url 'move_up' boop.id %}" style="display:inline;">
         {% csrf_token %}
         <button type="submit">Move Up</button>
     </form>
-    <form method="post" action="{% url 'delete_boop' boop.id %}">
+    <form method="post" action="{% url 'delete_boop' boop.id %}" style="display:inline;">
         {% csrf_token %}
         <button type="submit">Delete</button>
     </form>
+    <br>
 {% endfor %}
