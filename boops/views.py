@@ -17,4 +17,22 @@ def move_up(request, boop_id):
         boop.save()
         previous_boop.save()
 
+        # Reorder the remaining Boop objects to maintain continuous order
+        # values
+        for index, remaining_boop in enumerate(Boop.objects.all()):
+            remaining_boop.order = index
+            remaining_boop.save()
+
+    return redirect('boop_list')
+
+
+def delete_boop(request, boop_id):
+    boop = get_object_or_404(Boop, id=boop_id)
+    boop.delete()
+
+    # Reorder the remaining Boop objects
+    for index, remaining_boop in enumerate(Boop.objects.all()):
+        remaining_boop.order = index
+        remaining_boop.save()
+
     return redirect('boop_list')
