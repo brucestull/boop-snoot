@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, redirect, render
+
 from .models import Boop
-from django.shortcuts import get_object_or_404
 
 
 def boop_list_view(request):
