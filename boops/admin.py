@@ -7,6 +7,7 @@ from .models import Boop
 @admin.register(Boop)
 class BoopAdmin(admin.ModelAdmin):
     list_display = ['fuzzy_one', 'order']
+    # Allow the order field to be edited in the admin list view
     list_editable = ['order']
 
     def get_changeform_initial_data(self, request):
