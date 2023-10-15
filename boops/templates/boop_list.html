@@ -1,8 +1,3 @@
-<form method="post" action="{% url 'boop_list' %}">
-    {% csrf_token %}
-    {{ form.as_p }}  <!-- Render the form fields -->
-    <button type="submit">Add Boop</button>
-</form>
 {% for boop in boops %}
     {{ boop.fuzzy_one }} {{ boop.order }} 
     <form method="post" action="{% url 'move_up' boop.id %}" style="display:inline;">

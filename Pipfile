@@ -6,7 +6,6 @@ name = "pypi"
 [packages]
 django = "*"
 isort = "*"
-django-debug-toolbar = "*"
 
 [dev-packages]
 
