@@ -5,7 +5,7 @@ from .models import Boop
 
 def boop_list_view(request):
     boops = Boop.objects.all()
-    return render(request, 'boop_list.html', {'boops': boops})
+    return render(request, "boop_list.html", {"boops": boops})
 
 
 def move_up(request, boop_id):
@@ -18,11 +18,11 @@ def move_up(request, boop_id):
         previous_boop.save()
         Boop.reorder_all()
 
-    return redirect('boop_list')
+    return redirect("boop_list")
 
 
 def delete_boop(request, boop_id):
     boop = get_object_or_404(Boop, id=boop_id)
     boop.delete()
     Boop.reorder_all()
-    return redirect('boop_list')
+    return redirect("boop_list")
