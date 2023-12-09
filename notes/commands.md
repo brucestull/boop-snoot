@@ -27,5 +27,9 @@ python manage.py create_boops
 ```
 
 ```python
+python manage.py create_boops --boops=4
+```
+
+```python
 python manage.py reorder_boops
 ```
