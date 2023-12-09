@@ -25,3 +25,7 @@ python manage.py display_the_word
 ```python
 python manage.py create_boops
 ```
+
+```python
+python manage.py reorder_boops
+```
